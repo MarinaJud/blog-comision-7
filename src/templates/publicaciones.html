@@ -4,29 +4,31 @@
 {% block contenido %}
     <h2>publicaciones</h2>
 
-    <!--Card con la publicacion-->
-    <div class="card">
-        <div class="card-header">
-          23-11-23
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Publicacion 1</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Leer mas</a>
-        </div>
-      </div>
+    
+    {% for Publicacion in publicaciones %}
 
-          <!--Card con la publicacion-->
+       <!--Card con la publicacion-->
     <div class="card">
-        <div class="card-header">
-          23-11-23
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Publicacion 2</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Leer mas</a>
-        </div>
+      <div class="card-header">
+        {{Publicacion.fecha}}
       </div>
+      <div class="card-body">
+        <h5 class="card-title">{{Publicacion.titulo}}</h5>
+        <p class="card-text">{{Publicacion.cuerpo}}</p>
+        <a href="#" class="btn btn-primary">Leer mas</a>
+      </div>
+    </div>
+
+
+
+
+    {% endfor %}
+      
+
+
+
+
+   
 
 {% endblock contenido %}
     
