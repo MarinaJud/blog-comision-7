@@ -3,6 +3,8 @@
 
 {% block contenido %}
     <h2>publicaciones</h2>
+    <a href="{% url 'publicar' %}" class="button">Publicar algo nuevo</a>
+  
 
     
     {% for Publicacion in publicaciones %}
@@ -11,6 +13,9 @@
     <div class="card">
       <div class="card-header">
         {{Publicacion.fecha}}
+        <span>
+          <a href="{% url 'modificar-publicacion' publicacion.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+        </span>
       </div>
       <div class="card-body">
         <h5 class="card-title">{{Publicacion.titulo}}</h5>
